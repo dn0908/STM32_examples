@@ -109,8 +109,11 @@ int main(void)
 	  ADC_VAL = HAL_ADC_GetValue(&hadc1);
 	  HAL_ADC_Stop(&hadc1);
 
-	  voltage = (float)(ADC_VAL * (3.3))/4095;
-	  Angle = (voltage*300)/3.3;
+//	  voltage = (float)(ADC_VAL * (3.3))/4095;
+//	  Angle = (voltage*300)/3.3;
+
+	  voltage = (float)(ADC_VAL)/4095 - (0.5);
+	  Angle = (voltage*200);
 
 	  HAL_Delay(10);
 
